@@ -13,9 +13,10 @@
   </div>
   <div class="row">
     <div class="col-md-3" ng-repeat="photo in photos">
-      <img src="{{photo.images.thumbnail.url}}" alt="">
+      <img src="{{photo.images.standard_resolution.url}}" alt="" class="thumbnail img-responsive">
       <p>{{photo.user.username}}</p>
-      <p>{{photo.likes.count}}</p>
+      <p><strong>{{photo.likes.count}}</strong> <span ng-pluralize count="{{photo.likes.count}}" 
+      when="{'1': 'Like', 'other': 'Likes'}"></span></p>
     </div>
   </div>
 </div>
